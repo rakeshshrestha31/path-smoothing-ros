@@ -103,13 +103,6 @@ void CubicSplineInterpolator::interpolatePath(
 
   unsigned int numPoints = pointsPerUnit_ * calcTotalDistance(path);
 
-  if (numPoints == 0)
-  {
-    ROS_WARN("path smoothing: path length zero, returning unsmoothed path");
-    smoothedPath = path;
-    return;
-  }
-
   smoothedPath.resize(numPoints);
 
   // interpolate points on the smoothed path using the points in the original path
